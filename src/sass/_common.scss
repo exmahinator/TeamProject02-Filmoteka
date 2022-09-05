@@ -1,2 +1,81 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
+//  Colors
+$white: #FFFFFF;
+
+
+// білий #FFFFFF;
+// чорний #000000 
+// помаранчевий #FF6B08 
+// сірий #8C8C8C 
+// футер #545454 
+// колір кнопки помаранчевий #FF6B01 
+// червоний #FF001B 
+// бекграунд футера #F7F7F7
+
+//  Font
+// $font-primery:
+// $font-title:
+
+// Cubic for transition 
+
+// Break points
+
+// Base style
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+ul,
+ol {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
