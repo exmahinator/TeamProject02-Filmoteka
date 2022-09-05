@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   padding-top: 30px;
@@ -9,9 +10,17 @@
   line-height: 1.18;
 
   color: #545454;
+  background-color: #f7f7f7;
 
   &__svg {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 13px;
     height: 13px;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: underline;
   }
 }
