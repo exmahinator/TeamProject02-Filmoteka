@@ -1,1 +1,1 @@
-import { pagination } from './js/pagination.js';
+import { paginationTablet } from './js/pagination.js';

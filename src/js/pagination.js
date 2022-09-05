@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-const options = {
+const optionsTablet = {
   totalItems: 400,
   itemsPerPage: 20,
   visiblePages: 5,
@@ -28,4 +28,4 @@ const options = {
   },
 };
 
-export const pagination = new Pagination('pagination', options);
+export const paginationTablet = new Pagination('pagination', optionsTablet);
