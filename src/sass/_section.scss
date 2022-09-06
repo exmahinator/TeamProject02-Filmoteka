@@ -167,6 +167,9 @@
         height: 574px;
         margin-bottom: 12px;
     }
+    &:hover{
+        cursor: pointer;
+    }
 }
 .movie__name{
     font-family: 'Roboto';
