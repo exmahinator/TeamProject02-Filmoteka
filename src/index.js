@@ -8,3 +8,4 @@ pagination.on('beforeMove', function (eventData) {
   // Тут повинна бути функція перемальовування сторінки з інформації з бекенда. Значення сторінки: eventData.page
 });
 
+import './js/search'
