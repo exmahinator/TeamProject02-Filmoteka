@@ -152,6 +152,7 @@
     max-width: 100%;
    height: auto;
     border-radius: 5px;
+    overflow: hidden;
     @media screen and (max-width:767px) {
         height:398px;
         margin-bottom: 8px;
