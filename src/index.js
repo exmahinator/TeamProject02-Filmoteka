@@ -1,5 +1,6 @@
 
 import { onItemClick } from './js/onItemClick.js';
+
 import { pagination } from './js/pagination.js';
 
 pagination.on('beforeMove', function (eventData) {
@@ -8,5 +9,3 @@ pagination.on('beforeMove', function (eventData) {
 });
 
 import './js/search'
-
-
