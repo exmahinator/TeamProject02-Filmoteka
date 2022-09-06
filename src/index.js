@@ -1,9 +1,9 @@
+
+import './js/search';
+import { onItemClick } from './js/onItemClick.js';
+
 import { pagination } from './js/pagination.js';
 
-// pagination.on('beforeMove', function (eventData) {
-//   console.log(eventData.page);
-//   // Тут повинна бути функція перемальовування сторінки з інформації з бекенда. Значення сторінки: eventData.page
-// });
 
 const teamRefSection = document.querySelector('.team');
 const teamRefBackdrop = document.querySelector('.footer__btn');
@@ -23,3 +23,10 @@ function closeTeamModal() {
   teamRefSection.classList.toggle('team-hidden');
   teamRefClose.removeEventListener('click', closeTeamModal);
 }
+
+pagination.on('beforeMove', function (eventData) {
+  console.log(eventData.page);
+  // Тут повинна бути функція перемальовування сторінки з інформації з бекенда. Значення сторінки: eventData.page
+});
+
+
