@@ -38,9 +38,6 @@
     flex-direction: column;
     width: 95vw;
     height: 95vh;
-    // background-color: rgba(255, 255, 255, 0.7);
-    // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    // backdrop-filter: blur(5px);
     border-radius: 20px;
     padding: 5px;
     justify-content: center;
@@ -61,6 +58,7 @@
 
   &__subitem {
     position: relative;
+    overflow: hidden;
     display: flex;
     width: calc((100% - 30px) / 3);
     height: 100%;
@@ -77,12 +75,20 @@
       margin-left: 40px;
       margin-right: 40px;
       transform: translateY(50px);
+      outline: gold;
+      transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
+
+      &:hover,
+      &:focus {
+        outline: 30px solid rgba(255, 217, 0, 0.415);
+        transform: scale(1.2) translateY(20px);
+      }
 
       &:hover > .team__photoExit,
       &:focus > .team__photoExit {
         opacity: 1;
-        outline: 30px solid rgba(255, 255, 0, 0.4);
       }
     }
 
@@ -117,8 +123,7 @@
     background-image: url(../images/team_opt/Darina_opt.jpg);
     background-position: center;
     background-size: cover;
-    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &__photo03 {
@@ -143,4 +148,42 @@
     bottom: 30px;
     right: 20px;
   }
+
+  &__description {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    color: #f7f7f7;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    background-color: rgba(255, 255, 255, 0.167);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    top: 92%;
+    left: 62%;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 30% 30% 0 0;
+  }
 }
+
+.team__subitem.team__subitem--reverse.team__photo02 > .team__description,
+.team__subitem.team__subitem--reverse.team__photo03 > .team__description {
+  left: 38%;
+}
+
+.team__subitem.team__subitem--central__bottom.team__photo04
+  > .team__description {
+  left: 50%;
+}
+
+// .team__subitem.team__photo01 {
+//   transform-origin: top left;
+//   transform: rotate(-45deg);
+//   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+// }
+
+// .team:not(.team-hidden) .team__subitem.team__photo01 {
+//   background-color: red;
+//   transform: rotate(-45deg);
+// }
