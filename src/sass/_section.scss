@@ -128,24 +128,19 @@
             }
         }
     }
-    &__pagination {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        color: #000000;
-        font-size: 12px;
-        line-height: 16px;
-    }
+    // &__pagination {
+    //     display: block;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     text-align: center;
+    //     font-family: 'Roboto';
+    //     font-style: normal;
+    //     font-weight: 500;
+    //     color: #000000;
+    //     font-size: 12px;
+    //     line-height: 16px;
+    // }
 }
-
-// .gallery
-// .gallery
-// .gallery
-// .gallery
 
 .movie__poster{
     display: block;
@@ -153,6 +148,7 @@
    height: auto;
     border-radius: 5px;
     overflow: hidden;
+    object-fit: cover;
     @media screen and (max-width:767px) {
         height:398px;
         margin-bottom: 8px;

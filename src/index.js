@@ -1,4 +1,7 @@
 
+import './js/service-themoviedb-api';
+import './js/create-markup_gallery';
+
 import './js/search';
 import { onItemClick } from './js/onItemClick.js';
 
@@ -28,5 +31,6 @@ pagination.on('beforeMove', function (eventData) {
   console.log(eventData.page);
   // Тут повинна бути функція перемальовування сторінки з інформації з бекенда. Значення сторінки: eventData.page
 });
+
 
 
