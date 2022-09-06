@@ -1,0 +1,146 @@
+.team-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.team {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 40px 20px 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:not(.team-hidden) {
+    opacity: 1;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    height: 95vh;
+    // background-color: rgba(255, 255, 255, 0.7);
+    // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    // backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &:first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__subitem {
+    position: relative;
+    display: flex;
+    width: calc((100% - 30px) / 3);
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.36);
+
+    &:not(.team__subitem--central__top) {
+      outline: 3px solid rgba(234, 19, 19, 0.4);
+    }
+
+    &--central__top {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-left: 40px;
+      margin-right: 40px;
+      transform: translateY(50px);
+      cursor: pointer;
+
+      &:hover > .team__photoExit,
+      &:focus > .team__photoExit {
+        opacity: 1;
+        outline: 30px solid rgba(255, 255, 0, 0.4);
+      }
+    }
+
+    &--central__bottom {
+      border-radius: 50% 50% 40px 40px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    &--straight {
+      border-radius: 5% 50% 5% 50%;
+    }
+
+    &--reverse {
+      border-radius: 50% 5% 50% 5%;
+    }
+  }
+
+  &__photo01 {
+    background-image: url(../images/team_opt/Yaroslav_opt.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__photoExit {
+    opacity: 0;
+    outline: rgba(255, 255, 0, 0.032);
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background-image: url(../images/team_opt/Darina_opt.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__photo03 {
+    background-image: url(../images/team_opt/Renat_opt.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__photo04 {
+    background-image: url(../images/team_opt/Vita_opt.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__description {
+    font: inherit;
+    font-size: large;
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+  }
+}
