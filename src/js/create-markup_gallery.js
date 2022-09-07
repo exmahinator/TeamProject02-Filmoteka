@@ -1,27 +1,28 @@
 import { getGenre, getTrendingMedia } from './service-themoviedb-api';
+import { pagination } from './pagination.js';
 
 const refs = {
   homePageGalleryList: document.querySelector('.gallery__list'),
 };
 
-async function galleryMain() {
+pagination.on('beforeMove', galleryMain);
+
+async function galleryMain(page) {
   try {
-    const { results } = await getTrendingMedia();
-    console.log(results);
+    const { results } = await getTrendingMedia(page ? page.page : 1);
     createMarkupGallery(results);
   } catch (error) {
     console.log(error.message);
   }
 }
+
 galleryMain();
 
-async function createMarkupGallery(results) {
+export async function createMarkupGallery(results) {
   try {
     const { genres } = await getGenre();
-    console.log(genres);
 
     const genresCreateObject = getCreateObject(genres);
-    console.log(genresCreateObject);
     const markup = results
       .map(
         ({
@@ -64,7 +65,6 @@ function getCreateObject(genres) {
   }, {});
 }
 function mapGanre(genreId, genresCreateObject) {
-  // console.log(genreId);
   return genreId
     .filter(genre => {
       return genresCreateObject[genre] !== undefined;
