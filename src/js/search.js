@@ -1,8 +1,10 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {getMovieSearch} from './service-themoviedb-api'
 import { createMarkupGallery } from './create-markup_gallery';
+import { pagination } from './pagination.js';
 
-document.querySelector('[js-data-search]').addEventListener('submit',(e)=>{
+document.querySelector('[js-data-search]').addEventListener('submit', (e) => {
+  pagination.reset();
   e.preventDefault()
   localStorage.setItem('search',e.currentTarget.elements.search.value)
 if (e.currentTarget.elements.search.value === '') {
@@ -12,7 +14,8 @@ if (e.currentTarget.elements.search.value === '') {
 getMovieSearch(e.currentTarget.elements.search.value,1)
 .then(({results})=>{
 createMarkupGallery(results)})
-.catch(Notify.info("Oops, we didn't find such a movie"))
+  .catch(
+    Error=>Notify.info("Oops, we didn't find such a movie"))
 e.currentTarget.elements.search.value = ''
  })
 
