@@ -23,7 +23,7 @@ export async function createMarkupGallery(results) {
     const { genres } = await getGenre();
 
     const genresCreateObject = getCreateObject(genres);
-    const markup = results
+    const markup = await results
       .map(
         ({
           id,
@@ -62,7 +62,7 @@ export async function createMarkupGallery(results) {
         }
       )
       .join('');
-    refs.homePageGalleryList.innerHTML = markup;
+    refs.homePageGalleryList.innerHTML = await markup;
   } catch (error) {
     console.log(error.massege);
   }
