@@ -15,3 +15,4 @@ createMarkupGallery(results)})
 .catch(Notify.info("Oops, we didn't find such a movie"))
 e.currentTarget.elements.search.value = ''
  })
+

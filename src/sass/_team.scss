@@ -114,6 +114,13 @@
     background-repeat: no-repeat;
   }
 
+  &__photo02 {
+    background-image: url(../images/team_opt/Maksym_opt.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   &__photoExit {
     opacity: 0;
     outline: rgba(255, 255, 0, 0.032);

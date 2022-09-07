@@ -1,6 +1,6 @@
 .modal {
     position: relative;
-    display: flex;
+    // display: flex;
 
     min-width: 280px;
     background-color: #ffffff;
@@ -184,6 +184,10 @@
     @media screen and (min-width: 1280px) {
         justify-content: start;
     }
+}
+
+.modal__btn.is-hiden {
+    display: none;
 }
 
 .modal__btn-watched {
