@@ -1,7 +1,7 @@
 
 import './js/service-themoviedb-api';
 import './js/create-markup_gallery';
-
+import './js/header-library-btn';
 import './js/search';
 import { onItemClick } from './js/onItemClick.js';
 
