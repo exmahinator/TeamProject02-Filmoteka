@@ -1,27 +1,28 @@
 import { getGenre, getTrendingMedia } from './service-themoviedb-api';
+import { pagination } from './pagination.js';
 
 const refs = {
   homePageGalleryList: document.querySelector('.gallery__list'),
 };
 
-async function galleryMain() {
+pagination.on('beforeMove', galleryMain);
+
+async function galleryMain(page) {
   try {
-    const { results } = await getTrendingMedia();
-    console.log(results);
+    const { results } = await getTrendingMedia(page ? page.page : 1);
     createMarkupGallery(results);
   } catch (error) {
     console.log(error.message);
   }
 }
+
 galleryMain();
 
-async function createMarkupGallery(results) {
+export async function createMarkupGallery(results) {
   try {
     const { genres } = await getGenre();
-    console.log(genres);
 
     const genresCreateObject = getCreateObject(genres);
-    console.log(genresCreateObject);
     const markup = results
       .map(
         ({
@@ -34,12 +35,16 @@ async function createMarkupGallery(results) {
           genre_ids,
         }) => {
           const dataRelize = first_air_date || release_date;
+          let imageUrl = 'https://image.tmdb.org/t/p/w500/'+poster_path;
+          if (poster_path === null) {
+            imageUrl = 'https://www.drupal.org/files/project-images/broken-image.jpg';
+          }
           return /*html*/ `<li class="gallery__item" data-id="${id}">
         <img
           class="movie__poster"
-          src="https://image.tmdb.org/t/p/w500/${poster_path}"
+          src="${imageUrl}"
           alt="movie poster"
-          
+          data-id="${id}"
         />
         <h2 class="movie__name">${name || title}</h2>
         <p class="movie__description"> ${mapGanre(
@@ -64,7 +69,6 @@ function getCreateObject(genres) {
   }, {});
 }
 function mapGanre(genreId, genresCreateObject) {
-  // console.log(genreId);
   return genreId
     .filter(genre => {
       return genresCreateObject[genre] !== undefined;

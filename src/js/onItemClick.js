@@ -5,15 +5,22 @@ const modalBtnClose = document.querySelector('[data-modal-close]');
 galleryList.addEventListener('click', onItemClick);
 
 export function onItemClick(evt) {
-  if (evt.target.closest('.gallery__item').tagName !== 'LI') {
+  if (evt.target.tagName !== 'IMG') {
+
     return;
   }
   modalBackdrop.classList.toggle('is-hidden');
 
-  document.addEventListener('keydown', onEscPress);
-  document.addEventListener('click', onBackdropClick);
-  modalBtnClose.addEventListener('click', onClickBtnCloseModal);
-}
+    const movieId = evt.target.dataset.id
+    localStorage.setItem('id',movieId)
+
+    document.addEventListener('keydown', onEscPress);
+    document.addEventListener('click', onBackdropClick);
+    modalBtnClose.addEventListener('click', onClickBtnCloseModal);
+  // if (evt.target.closest('.gallery__item').tagName !== 'LI') {
+  //   return;
+  // }
+} 
 
 function onEscPress(evt) {
   if (evt.code === 'Escape') {
