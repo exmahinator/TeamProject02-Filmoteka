@@ -186,6 +186,10 @@
     }
 }
 
+.modal__btn.is-hiden {
+    display: none;
+}
+
 .modal__btn-watched {
     display: flex;
     justify-content: center;
