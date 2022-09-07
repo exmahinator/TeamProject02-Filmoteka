@@ -25,8 +25,7 @@ export function onItemClick(evt) {
     document.addEventListener('click', onBackdropClick);
   modalBtnClose.addEventListener('click', onClickBtnCloseModal);
   
-  onBtnWatchedClick(movieId);
-  onBtnQueueClick(movieId);
+  
 } 
 
 function onEscPress(evt) {
