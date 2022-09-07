@@ -11,6 +11,8 @@ import { pagination } from './js/pagination.js';
 const teamRefSection = document.querySelector('.team');
 const teamRefBackdrop = document.querySelector('.footer__btn');
 const teamRefClose = document.querySelector('.team__subitem--central__top');
+const myLibraryBtn = document.querySelector('[js-data-library]');
+const myLibraryGalleryList = document.querySelector('.gallery__list');
 
 teamRefBackdrop.addEventListener('click', openTeam);
 
@@ -32,5 +34,10 @@ pagination.on('beforeMove', function (eventData) {
   // Тут повинна бути функція перемальовування сторінки з інформації з бекенда. Значення сторінки: eventData.page
 });
 
+// myLibraryBtn.addEventListener('click', onMyLibraryClick);
+
+// function onMyLibraryClick() {
+//     myLibraryGalleryList.innerHTML = '';
+// }
 
 
