@@ -145,7 +145,7 @@
 .movie__poster{
     display: block;
     max-width: 100%;
-   height: auto;
+    height: auto;
     border-radius: 5px;
     overflow: hidden;
     object-fit: cover;
@@ -188,8 +188,10 @@
     }
 }
 .movie__description{
-    display: flex;
-    align-items: flex-end;
+   
+    // display: flex;
+    // align-items: flex-end;
+  
     font-family: 'Roboto';
         font-style: normal;
         font-weight: 500;
@@ -213,9 +215,11 @@
     }
 }
 .movie__rating{
-    display: flex;
+    
+        display: inline-flex;
+        align-items: flex-end;
         margin-left: 8px;
-        align-items: center;
+      padding-bottom: 2px;
         justify-content: center;
         font-family: 'Roboto';
         font-style: normal;
@@ -234,11 +238,14 @@
     @media screen and (max-width:767px) {
        width: 36px;
        height: 16px;
+    padding-bottom: 1px;
+
     }
         
     @media screen and (min-width: 768px) and (max-width:1199px) {
        width: 36px;
         height: 16px;
+        padding-bottom: 1px;
     }
         
     @media screen and (min-width: 1200px) {

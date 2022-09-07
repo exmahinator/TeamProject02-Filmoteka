@@ -24,6 +24,10 @@ export async function createMarkupGallery(results) {
 
     const genresCreateObject = getCreateObject(genres);
     const markup = results
+      .sort(
+        (firstReiting, secondReiting) =>
+          secondReiting.vote_average - firstReiting.vote_average
+      )
       .map(
         ({
           id,
