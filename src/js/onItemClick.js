@@ -16,7 +16,7 @@ export function onItemClick(evt) {
 
     const movieId = evt.target.dataset.id
   localStorage.setItem('id', movieId)
-  console.log('movieId', movieId)
+  // console.log('movieId', movieId)
 
   
   getInfoOnId(movieId).then(createMarkupModalForFilms)

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {Spinner} from 'spin.js';
 
 const modalContents = document.querySelector('.modal__contents');
 
@@ -37,7 +38,7 @@ export function createMarkupModalForFilms(results) {
 
  let imageModal = 'https://image.tmdb.org/t/p/w500/' + poster_path;
 
-  const markup = `<img src="${imageModal}" alt="фото" class="modal__poster" data-id="${id} />
+  const markup = `<img src="${imageModal}" alt="фото" class="modal__poster" data-id="${id}"/>
       <div>
         <h2 class="modal__title">${name || title}</h2>
         <table class="modal__info">
@@ -66,7 +67,6 @@ export function createMarkupModalForFilms(results) {
           ${overview}
         </p>
       </div>`;
-console.log(markup)
-  modalContents.innerHTML = markup;
+  modalContents.innerHTML = '';
+  modalContents.insertAdjacentHTML('afterbegin', markup);
       }
-  
