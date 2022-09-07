@@ -35,12 +35,16 @@ export async function createMarkupGallery(results) {
           genre_ids,
         }) => {
           const dataRelize = first_air_date || release_date;
+          let imageUrl = 'https://image.tmdb.org/t/p/w500/'+poster_path;
+          if (poster_path === null) {
+            imageUrl = 'https://www.drupal.org/files/project-images/broken-image.jpg';
+          }
           return /*html*/ `<li class="gallery__item" data-id="${id}">
         <img
           class="movie__poster"
-          src="https://image.tmdb.org/t/p/w500/${poster_path}"
+          src="${imageUrl}"
           alt="movie poster"
-          
+          data-id="${id}"
         />
         <h2 class="movie__name">${name || title}</h2>
         <p class="movie__description"> ${mapGanre(
