@@ -33,11 +33,13 @@ export async function createMarkupGallery(results) {
           title,
           release_date,
           genre_ids,
+          vote_average,
         }) => {
           const dataRelize = first_air_date || release_date;
-          let imageUrl = 'https://image.tmdb.org/t/p/w500/'+poster_path;
+          let imageUrl = 'https://image.tmdb.org/t/p/w500/' + poster_path;
           if (poster_path === null) {
-            imageUrl = 'https://www.drupal.org/files/project-images/broken-image.jpg';
+            imageUrl =
+              'https://www.drupal.org/files/project-images/broken-image.jpg';
           }
           return /*html*/ `<li class="gallery__item" data-id="${id}">
         <img
@@ -51,7 +53,10 @@ export async function createMarkupGallery(results) {
           genre_ids,
           genresCreateObject
         )} | 
-          ${dataRelize.slice(0, 4)}
+          ${dataRelize.slice(
+            0,
+            4
+          )}<span class="movie__rating">${vote_average.toFixed(1)}</span>
         </p>
       </li>`;
         }

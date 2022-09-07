@@ -150,17 +150,17 @@
     overflow: hidden;
     object-fit: cover;
     @media screen and (max-width:767px) {
-        height:398px;
+        // height:398px;
         margin-bottom: 8px;
     }
         
     @media screen and (min-width: 768px) and (max-width:1199px) {
-        height: 455px;
+        // height: 455px;
         margin-bottom: 8px;
     }
         
     @media screen and (min-width: 1200px) {
-        height: 574px;
+        // height: 574px;
         margin-bottom: 12px;
     }
     &:hover{
@@ -214,10 +214,10 @@
 }
 .movie__rating{
     display: flex;
-   margin-left: 8px;
+        margin-left: 8px;
         align-items: center;
         justify-content: center;
-    font-family: 'Roboto';
+        font-family: 'Roboto';
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -225,34 +225,36 @@
        background-color: #FF6B01;
         text-transform: uppercase;
         color: #FFFFFF;
-        width: 40px;
-        height: 20px;
+        max-width: 40px;
+        max-height: 20px;
         border-radius: 5px;
+      
+
         
     @media screen and (max-width:767px) {
-        width: 36px;
-        height: 16px;
+       width: 36px;
+       height: 16px;
     }
         
     @media screen and (min-width: 768px) and (max-width:1199px) {
-        width: 36px;
+       width: 36px;
         height: 16px;
     }
         
     @media screen and (min-width: 1200px) {
-        width: 40px;
+       width: 40px;
         height: 20px;
     }
 }
-.movie__rating.visually-hidden{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
+// .movie__rating.visually-hidden{
+//     position: absolute;
+//     width: 1px;
+//     height: 1px;
+//     margin: -1px;
+//     border: 0;
+//     padding: 0;
+//     white-space: nowrap;
+//     clip-path: inset(100%);
+//     clip: rect(0 0 0 0);
+//     overflow: hidden;
+// }
