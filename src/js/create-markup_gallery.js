@@ -1,35 +1,8 @@
-import { getGenre, getTrendingMedia } from './axiosRequests';
-import { pagination } from './pagination.js';
-import { getMovieSearch } from './axiosRequests';
+import { getGenre } from './axiosRequests';
 
-localStorage.removeItem('search');
-// console.log(localStorage.getItem('search'))
 const refs = {
   homePageGalleryList: document.querySelector('.gallery__list'),
 };
-// console.log(localStorage.getItem('search'))
-if (document.title === 'Filmoteka') {
-  pagination.on('beforeMove', galleryMain);
-
-  async function galleryMain(page) {
-    try {
-      if (localStorage.getItem('search') !== null) {
-        const searchName = localStorage.getItem('search');
-        const searchPage = page.page;
-        getMovieSearch(searchName, searchPage).then(({ results }) => {
-          createMarkupGallery(results);
-        });
-      }
-
-      const { results } = await getTrendingMedia(page ? page.page : 1);
-      createMarkupGallery(results);
-      // console.log(results);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
-  galleryMain();
-}
 
 export async function createMarkupGallery(results) {
   try {
@@ -91,7 +64,11 @@ function getCreateObject(genres) {
     return { ...acc, [id]: name };
   }, {});
 }
+
 function mapGanre(genreId, genresCreateObject) {
+  if (genreId.length === 0) {
+    return;
+  }
   return genreId
     .filter(genre => {
       return genresCreateObject[genre] !== undefined;

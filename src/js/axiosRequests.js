@@ -41,6 +41,7 @@ export async function getGenre() {
   });
   return data;
 }
+
 export async function getFilmById(external_id) {
   spinnerOn();
   try {
