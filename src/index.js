@@ -14,8 +14,13 @@ import './js/create-markup_gallery';
 // Тест для приховування розмітки другої сторінки
 
 if (document.title !== 'Filmoteka') {
-  const fieldMain = document.querySelector('.gallery__list');
-  const fieldLib = document.querySelector('.gallery__library');
-  fieldMain.classList.toggle('visually-hidden');
-  fieldLib.classList.toggle('visually-hidden');
+  const cont = document.querySelector('.gallery__container');
+  cont.innerHTML = '';
 }
+
+// if (document.title !== 'Filmoteka') {
+//   const fieldMain = document.querySelector('.gallery__list');
+//   const fieldLib = document.querySelector('.gallery__library');
+//   fieldMain.classList.toggle('visually-hidden');
+//   fieldLib.classList.toggle('visually-hidden');
+// }

@@ -3,6 +3,7 @@ import {getMovieSearch} from './service-themoviedb-api'
 import { createMarkupGallery } from './create-markup_gallery';
 import { pagination } from './pagination.js';
 
+
 document.querySelector('[js-data-search]').addEventListener('submit', (e) => {
   pagination.reset();
   e.preventDefault()
