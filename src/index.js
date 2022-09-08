@@ -1,12 +1,12 @@
 import './js/loader';
 import './js/search';
-import './js/onItemClick';
+import './js/modal';
 import './js/add_to_watched';
 
-import './js/service-themoviedb-api';
+import './js/axiosRequests';
 import './js/ourTeam';
 
-import './js/header-library-btn';
+import './js/myLibrary';
 import './js/create-markup_gallery';
 
 // const page = document.title;
