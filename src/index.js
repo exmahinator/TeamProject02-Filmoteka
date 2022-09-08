@@ -1,3 +1,4 @@
+import './js/loader';
 import './js/search';
 import './js/onItemClick';
 import './js/add_to_watched';
