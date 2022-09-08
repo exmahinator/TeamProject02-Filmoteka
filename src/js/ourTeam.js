@@ -6,7 +6,7 @@ teamRefBackdrop.addEventListener('click', openTeam);
 
 function openTeam(event) {
   event.preventDefault();
-  console.log('clicking the button');
+  // console.log('clicking the button');
 
   teamRefSection.classList.toggle('team-hidden');
   teamRefClose.addEventListener('click', closeTeamModal);

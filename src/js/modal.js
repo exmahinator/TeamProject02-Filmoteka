@@ -5,33 +5,31 @@ import { isModalOpen } from './add_to_watched';
 const galleryList = document.querySelector('.gallery__list');
 const modalBackdrop = document.querySelector('[data-modal]');
 const modalBtnClose = document.querySelector('[data-modal-close]');
-console.log(!localStorage.getItem("Watched"))
+// console.log(!localStorage.getItem("Watched"))
 
 let arrayWatched;
 let arrayQueue;
 
-if (!localStorage.getItem("Watched")) {
+if (!localStorage.getItem('Watched')) {
   arrayWatched = [];
 } else {
-  const savedSettings = localStorage.getItem("Watched");
- 
+  const savedSettings = localStorage.getItem('Watched');
+
   const parsedSettings = JSON.parse(savedSettings);
- 
-  
+
   arrayWatched = [...parsedSettings];
-   console.log('arrayWatched', arrayWatched);
+  console.log('arrayWatched', arrayWatched);
 }
 
-if (!localStorage.getItem("Queue")) {
+if (!localStorage.getItem('Queue')) {
   arrayQueue = [];
 } else {
-  const savedSettingsQ = localStorage.getItem("Queue");
- 
+  const savedSettingsQ = localStorage.getItem('Queue');
+
   const parsedSettingsQ = JSON.parse(savedSettingsQ);
- 
-  
+
   arrayQueue = [...parsedSettingsQ];
-   console.log('queueArray', arrayQueue);
+  console.log('queueArray', arrayQueue);
 }
 
 galleryList.addEventListener('click', onItemClick);
@@ -54,8 +52,7 @@ export function onItemClick(evt) {
 
       console.log(addToQueue);
       console.log(addToWatchedBtn);
-      
-      
+
       addToWatchedBtn.addEventListener('click', addLocalStorage);
       addToQueue.addEventListener('click', addLocalStorageQ);
 
@@ -72,7 +69,6 @@ export function onItemClick(evt) {
         arrayQueue.push(idForQueue);
         localStorage.setItem('Queue', JSON.stringify(arrayQueue));
       }
-
     }
     // -----------------------------------
   );
