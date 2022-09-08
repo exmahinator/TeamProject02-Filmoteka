@@ -16,12 +16,12 @@ export async function getTrendingMedia(pageNamber) {
   return data;
 }
 
-export async function getMovieSearch(query,pageNamber) {
+export async function getMovieSearch(query, pageNamber) {
   const { data } = await axios.get('search/movie', {
     params: {
       page: pageNamber,
-      include_adult:false,
-      query
+      include_adult: false,
+      query,
     },
   });
   return data;
