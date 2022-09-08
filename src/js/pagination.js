@@ -1,10 +1,10 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-const optionsTablet = {
+const options = {
   totalItems: 400,
   itemsPerPage: 20,
-  visiblePages: 5,
+  visiblePages: window.innerWidth <= 320 ? 1 : 5,
   page: 1,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
@@ -28,4 +28,5 @@ const optionsTablet = {
   },
 };
 
-export const paginationTablet = new Pagination('pagination', optionsTablet);
+export const pagination = new Pagination('pagination', options);
+
