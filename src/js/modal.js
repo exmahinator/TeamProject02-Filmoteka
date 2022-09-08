@@ -10,7 +10,6 @@ const modalBtnClose = document.querySelector('[data-modal-close]');
 
 // console.log(!localStorage.getItem("Watched"))
 
-
 let arrayWatched;
 let arrayQueue;
 
@@ -75,17 +74,18 @@ export function onItemClick(evt) {
 
         console.log(arrayWatched);
         if (arrayWatched.includes(idForWatched)) {
-          const positionRemove = arrayWatched.findIndex(
-            id => id === idForWatched
-          );
           // для удаления id из массива!
-        //   console.log(positionRemove);
-        //  arrayWatched = arrayWatched.splise(positionRemove, 1);
-        //   console.log(arrayWatched);
+          // const positionRemove = arrayWatched.findIndex(
+          //   id => id === idForWatched
+          // );
 
-        //   addToWatchedBtn.textContent = 'add to watched';
-        //   addToWatchedBtn.style.backgroundColor = 'red';
-        //   addToWatchedBtn.style.color = 'inherit';
+          //   console.log(positionRemove);
+          //  arrayWatched = arrayWatched.splise(positionRemove, 1);
+          //   console.log(arrayWatched);
+
+          //   addToWatchedBtn.textContent = 'add to watched';
+          //   addToWatchedBtn.style.backgroundColor = 'red';
+          //   addToWatchedBtn.style.color = 'inherit';
 
           return Notify.info('This movie is already in the library "WATCHED"!');
         }
@@ -106,7 +106,11 @@ export function onItemClick(evt) {
           return Notify.info('This movie is already in the library "QUEUE"!');
         }
 
-        console.log(idForQueue);
+        addToQueue.textContent = 'added';
+        addToQueue.style.backgroundColor = '#f7f7f7';
+        addToQueue.style.color = '#ff6b01';
+
+        // console.log(idForQueue);
         arrayQueue.push(idForQueue);
         localStorage.setItem('Queue', JSON.stringify(arrayQueue));
       }
