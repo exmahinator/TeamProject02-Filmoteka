@@ -13,10 +13,10 @@ import './js/create-markup_gallery';
 
 // Тест для приховування розмітки другої сторінки
 
-if (document.title !== 'Filmoteka') {
-  const cont = document.querySelector('.gallery__container');
-  cont.innerHTML = '';
-}
+// if (document.title !== 'Filmoteka') {
+//   const cont = document.querySelector('.gallery__container');
+//   cont.innerHTML = '';
+// }
 
 // if (document.title !== 'Filmoteka') {
 //   const fieldMain = document.querySelector('.gallery__list');
