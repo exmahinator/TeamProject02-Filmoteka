@@ -8,6 +8,9 @@ const galleryList = document.querySelector('.gallery__list');
 const modalBackdrop = document.querySelector('[data-modal]');
 const modalBtnClose = document.querySelector('[data-modal-close]');
 
+// console.log(!localStorage.getItem("Watched"))
+
+
 let arrayWatched;
 let arrayQueue;
 
