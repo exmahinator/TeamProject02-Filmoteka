@@ -1,5 +1,7 @@
-console.log(document.title);
+// console.log(document.title);
+
 import axios from 'axios';
+import { spinnerOn, spinnerOff } from './loader';
 import { createMarkupGallery } from './create-markup_gallery';
 let pageNumber = 1;
 const refs = {
@@ -33,6 +35,7 @@ if (document.title !== 'Filmoteka') {
   libOpen('Watched');
 
   async function libOpen(key) {
+    spinnerOn();
     let receivedWatchedArrById = [];
     const watchedArr = localStorage.getItem(key);
     const parcedWatchedArr = JSON.parse(watchedArr) ?? [];
@@ -44,6 +47,7 @@ if (document.title !== 'Filmoteka') {
     }
 
     createMarkupById(receivedWatchedArrById);
+    spinnerOff();
   }
 
   async function onBtnWatchedShow() {
