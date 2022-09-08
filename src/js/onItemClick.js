@@ -1,3 +1,6 @@
+import { getInfoOnId, createMarkupModalForFilms } from './modal_create-markup'
+import { onBtnWatchedClick, onBtnQueueClick } from './add_to_watched';
+
 const galleryList = document.querySelector('.gallery__list');
 const modalBackdrop = document.querySelector('[data-modal]');
 const modalBtnClose = document.querySelector('[data-modal-close]');
@@ -12,14 +15,17 @@ export function onItemClick(evt) {
   modalBackdrop.classList.toggle('is-hidden');
 
     const movieId = evt.target.dataset.id
-    localStorage.setItem('id',movieId)
+  localStorage.setItem('id', movieId)
+  // console.log('movieId', movieId)
+
+  
+  getInfoOnId(movieId).then(createMarkupModalForFilms)
 
     document.addEventListener('keydown', onEscPress);
     document.addEventListener('click', onBackdropClick);
-    modalBtnClose.addEventListener('click', onClickBtnCloseModal);
-  // if (evt.target.closest('.gallery__item').tagName !== 'LI') {
-  //   return;
-  // }
+  modalBtnClose.addEventListener('click', onClickBtnCloseModal);
+  
+  
 } 
 
 function onEscPress(evt) {

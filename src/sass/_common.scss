@@ -1,40 +1,38 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
 //  Colors
-$white: #FFFFFF;
-
+$white: #ffffff;
 
 // білий #FFFFFF;
-// чорний #000000 
-// помаранчевий #FF6B08 
-// сірий #8C8C8C 
-// футер #545454 
-// колір кнопки помаранчевий #FF6B01 
-// червоний #FF001B 
+// чорний #000000
+// помаранчевий #FF6B08
+// сірий #8C8C8C
+// футер #545454
+// колір кнопки помаранчевий #FF6B01
+// червоний #FF001B
 // бекграунд футера #F7F7F7
 
 //  Font
 // $font-primery:
 
-
-// Cubic for transition 
+// Cubic for transition
 
 // Break points
 
 // Base style
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::after,
 *::before {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 ul,
 ol {
-    padding: 0;
+  padding: 0;
 }
 
 body,
@@ -53,30 +51,42 @@ figcaption,
 blockquote,
 dl,
 dd {
-    margin: 0;
+  margin: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
