@@ -5,7 +5,7 @@ import { getFilmById } from './axiosRequests';
 import { spinnerOn, spinnerOff } from './loader';
 
 const homePageGalleryList = document.querySelector('.gallery__container');
-console.log(homePageGalleryList);
+// console.log(homePageGalleryList);
 
 let pageNumber = 1;
 
