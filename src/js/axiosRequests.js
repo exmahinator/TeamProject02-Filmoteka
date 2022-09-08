@@ -51,7 +51,8 @@ export async function getFilmById(external_id) {
     return data;
   } catch (error) {
     console.log(error.massege);
-    // modalContents.innerHTML =
-    //   '<img src="http://lamcdn.net/lookatme.ru/post_image-image/sIaRmaFSMfrw8QJIBAa8mA-article.png" alt="404 Not found"/>';
+    document.querySelector('.test').innerHTML =
+      '<img src="http://lamcdn.net/lookatme.ru/post_image-image/sIaRmaFSMfrw8QJIBAa8mA-article.png" alt="404 Not found"/>';
+     spinnerOff();
   }
 }
