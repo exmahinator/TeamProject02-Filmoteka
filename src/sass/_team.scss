@@ -29,6 +29,10 @@
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  @media screen and (max-width: 320px) {
+    padding: 0;
+  }
+
   &:not(.team-hidden) {
     opacity: 1;
   }
@@ -49,9 +53,18 @@
     width: 100%;
     height: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     &:first-child {
+      margin-bottom: 10px;
+    }
+
+    &--up {
+      align-items: flex-start;
+    }
+
+    @media screen and (max-width: 320px) {
+      flex-direction: column;
       margin-bottom: 10px;
     }
   }
@@ -60,9 +73,19 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    width: calc((100% - 30px) / 3);
-    height: 100%;
+
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50%;
     background-color: rgba(255, 0, 0, 0.36);
+
+    @media screen and (min-width: 640px) {
+      height: 75%;
+    }
+
+    @media screen and (min-width: 1280px) {
+      height: 100%;
+    }
 
     &:not(.team__subitem--central__top) {
       outline: 3px solid rgba(234, 19, 19, 0.4);
@@ -70,20 +93,46 @@
 
     &--central__top {
       border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      margin-left: 40px;
-      margin-right: 40px;
-      transform: translateY(50px);
+      max-width: 50px;
+      max-height: 50px;
+      height: 100%;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
       outline: gold;
       transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
         transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      // align-self: flex-end;
       cursor: pointer;
+
+      @media screen and (min-width: 320px) {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        max-width: 75px;
+        max-height: 75px;
+      }
+
+      @media screen and (min-width: 640px) {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        max-width: 100px;
+        max-height: 100px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        max-width: 150px;
+        max-height: 150px;
+      }
 
       &:hover,
       &:focus {
         outline: 30px solid rgba(255, 217, 0, 0.415);
-        transform: scale(1.2) translateY(20px);
+        transform: scale(1.2);
       }
 
       &:hover > .team__photoExit,
@@ -147,6 +196,13 @@
     background-repeat: no-repeat;
   }
 
+  &__photo05 {
+    background-image: url(../images/team_opt/Artem_opt.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   &__description {
     font: inherit;
     font-size: large;
@@ -160,7 +216,7 @@
     padding: 10px;
     text-align: center;
     width: 100%;
-    height: 30%;
+    height: 40%;
     position: absolute;
     color: #f7f7f7;
     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
@@ -171,6 +227,10 @@
     left: 62%;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 30% 30% 0 0;
+
+    @media screen and (min-width: 320px) {
+      height: 30%;
+    }
   }
 }
 
@@ -183,14 +243,3 @@
   > .team__description {
   left: 50%;
 }
-
-// .team__subitem.team__photo01 {
-//   transform-origin: top left;
-//   transform: rotate(-45deg);
-//   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-// }
-
-// .team:not(.team-hidden) .team__subitem.team__photo01 {
-//   background-color: red;
-//   transform: rotate(-45deg);
-// }

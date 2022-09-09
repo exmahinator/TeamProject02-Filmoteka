@@ -79,6 +79,7 @@
 .modal__btn-close:hover {
     font-size: 20px;
     cursor: pointer;
+    color: #ff6b01;
 }
 
 // .icon-close {
@@ -198,11 +199,13 @@
     margin-right: 20px;
     width: 110px;
     height: 44px;
-    border: none;
+    
+    border: 1px solid #000000;
     border-radius: 4px;
 
-    background-color: #ff6b01;
-    color: #ffffff;
+    
+    background-color: inherit;
+   
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -210,10 +213,19 @@
     line-height: 1.33;
     text-transform: uppercase;
 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     @media screen and (min-width: 768px) {
         width: 125px;
         height: 44px;
     }
+}
+
+.modal__btn-watched:hover {
+color: #ffffff;
+background-color: #ff6b01;
+border: none;
+cursor: pointer;
 }
 
 .modal__btn-queue {
@@ -234,11 +246,21 @@
     line-height: 1.33;
     text-transform: uppercase;
 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     @media screen and (min-width: 768px) {
         width: 125px;
         height: 44px;
     }
 }
+
+.modal__btn-queue:hover {
+    color: #ffffff;
+        background-color: #ff6b01;
+        border: none;
+        cursor: pointer;
+}
+
 
 .backdrop.is-hidden {
     pointer-events: none;
