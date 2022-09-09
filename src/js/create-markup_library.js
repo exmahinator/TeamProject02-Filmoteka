@@ -31,6 +31,8 @@ export function createMarkupById(results) {
           src="${imageUrl}"
           alt="movie poster"
           data-id="${id}"
+           width = "395"
+          height = "574"
         />
         <h2 class="movie__name">${name || title}</h2>
         <p class="movie__description"> ${genres.map(({ name }) => {

@@ -13,7 +13,7 @@ if (document.title !== 'Filmoteka_Library') {
     visiblePages: window.innerWidth <= 320 ? 1 : 5,
     page: 1,
   };
-
+  let searchQuery = '';
   const pagination = new Pagination('pagination', options);
 
   const page = pagination.getCurrentPage();
@@ -48,12 +48,13 @@ if (document.title !== 'Filmoteka_Library') {
   pagination.on('afterMove', trendFilms);
 
   // ------------------------------------------------------------------------------------------------------------------------------------------
-
-  const handleSubmit = async event => {
+  searchRef.addEventListener('submit', handleSubmit);
+  
+  async function handleSubmit (evt) {
     event.preventDefault();
 
-    const searchQuery = event.target.elements.search.value.trim();
-    console.log(searchQuery);
+    searchQuery = event.target.elements.search.value.trim();
+    // console.log(searchQuery);
 
     if (!searchQuery) {
       console.log(searchQuery);
@@ -66,20 +67,7 @@ if (document.title !== 'Filmoteka_Library') {
     pagination.off('afterMove', trendFilms);
     pagination.off('afterMove', handleMoreClick);
 
-    async function handleMoreClick(event) {
-      const currentPage = event.page;
-
-      try {
-        const { results } = await getMovieSearch(searchQuery, currentPage);
-
-        const markup = createMarkupGallery(results);
-
-        renderRef.innerHTML = markup;
-      } catch (error) {
-        renderRef.innerHTML = '';
-      }
-    }
-
+    
     pagination.on('afterMove', handleMoreClick);
 
     try {
@@ -114,9 +102,23 @@ if (document.title !== 'Filmoteka_Library') {
     }
   };
 
+async function handleMoreClick(event) {
+      const currentPage = event.page;
+
+      try {
+        const { results } = await getMovieSearch(searchQuery, currentPage);
+
+        const markup = createMarkupGallery(results);
+
+        renderRef.innerHTML = markup;
+      } catch (error) {
+        renderRef.innerHTML = '';
+      }
+    }
+
   // ---------------------------------------------------------------------------------------------
 
-  searchRef.addEventListener('submit', handleSubmit);
+  
 
   // ---------------------------------------------------------------------------------------------
 

@@ -18,7 +18,7 @@ export function createMarkupModalForFilms(results) {
   let imageModal = 'https://image.tmdb.org/t/p/w500/' + poster_path;
 
   const markup = ` <div class="modal__contents" >
-  <img src="${imageModal}" alt="фото" class="modal__poster" data-id="${id}"/>
+  <img src="${imageModal}" alt="фото" class="modal__poster" data-id="${id}  width = "375"/>
       <div>
         <h2 class="modal__title">${name || title}</h2>
         <table class="modal__info">

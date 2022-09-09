@@ -1,31 +1,41 @@
 <header class="header header-library">
-    <div class="container container-libr">
-        <nav class="header-content nav-library">
-            <a href="./index.html" class="header-logo">
-                <svg class="logo-icon" width="24" height="24">
-                    <use href="./images-header/symbol-defs.svg#icon-logo"></use>
-                </svg>
-                <span class="span-header"> Filmoteka</span>
-            </a>
+  <div class="container container-libr">
+    <nav class="header-content nav-library">
+      <a href="./index.html" class="header-logo" aria-label="link to main page">
+        <svg class="logo-icon" width="24" height="24">
+          <use href="./images-header/symbol-defs.svg#icon-logo"></use>
+        </svg>
+        <span class="span-header"> Filmoteka</span>
+      </a>
 
-            <ul class="right-side list">
-                <li class="header-item">
-                    <a href="./index.html" class="header-link link">HOME</a>
-                </li>
-                <li class="header-item">
-                    <a href="./library.html" class="current header-link link js-data-library">MY LIBRARY</a>
-                </li>
-            </ul>
-        </nav>
-        <ul class="list header-buttons">
-            <li class="header-button">
-                <button type="button" class="btn active lib-watched-btn">
-                    WATCHED
-                </button>
-            </li>
-            <li class="header-button">
-                <button type="button" class="btn lib-queue-btn">QUEUE</button>
-            </li>
-        </ul>
-    </div>
+      <ul class="right-side list">
+        <li class="header-item">
+          <a
+            href="./index.html"
+            class="header-link link"
+            aria-label="link to home page"
+            >HOME</a
+          >
+        </li>
+        <li class="header-item">
+          <a
+            href="./library.html"
+            class="current header-link link js-data-library"
+            aria-label="link to library page"
+            >MY LIBRARY</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <ul class="list header-buttons">
+      <li class="header-button">
+        <button type="button" class="btn active lib-watched-btn">
+          WATCHED
+        </button>
+      </li>
+      <li class="header-button">
+        <button type="button" class="btn lib-queue-btn">QUEUE</button>
+      </li>
+    </ul>
+  </div>
 </header>

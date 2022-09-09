@@ -1,7 +1,7 @@
 <header class="header header-home">
   <div class="container">
     <nav class="header-content nav-home">
-      <a href="./index.html" class="header-logo">
+      <a href="./index.html" class="header-logo" aria-label="link to main page">
         <svg class="logo-icon" width="24" height="24">
           <use href="./images-header/symbol-defs.svg#icon-logo"></use>
         </svg>
@@ -10,16 +10,31 @@
 
       <ul class="right-side list">
         <li class="header-item">
-          <a href="./index.html" class="current header-link link">HOME</a>
+          <a
+            href="./index.html"
+            class="current header-link link"
+            aria-label="link to home page"
+            >HOME</a
+          >
         </li>
         <li class="header-item">
-          <a href="./library.html" class="header-link link js-data-library">MY LIBRARY</a>
+          <a
+            href="./library.html"
+            class="header-link link js-data-library"
+            aria-label="link to library page"
+            >MY LIBRARY</a
+          >
         </li>
       </ul>
     </nav>
     <div class="header-form">
       <form js-data-search>
-        <input type="text" name="search" class="header-input" placeholder="Movie search" />
+        <input
+          type="text"
+          name="search"
+          class="header-input"
+          placeholder="Movie search"
+        />
       </form>
       <svg class="input-icon" width="12" height="12">
         <use href="./images-header/symbol-defs.svg#icon-search"></use>

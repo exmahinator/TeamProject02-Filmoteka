@@ -115,7 +115,6 @@ export function onItemClick(evt) {
         localStorage.setItem('Queue', JSON.stringify(arrayQueue));
       }
     }
-    // -----------------------------------
   );
 
   document.addEventListener('keydown', onEscPress);
