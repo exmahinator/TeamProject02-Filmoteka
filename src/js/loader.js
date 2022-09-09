@@ -1,6 +1,6 @@
 import { Spinner } from 'spin.js';
 
-opts = {
+const opts = {
   lines: 13, // The number of lines to draw
   length: 38, // The length of each line
   width: 17, // The line thickness
