@@ -46,7 +46,7 @@ export async function createMarkupGallery(results) {
           genre_ids,
           genresCreateObject
         )} | 
-          ${dataRelize.slice(
+          ${dataRelize?.slice(
             0,
             4
           )}<span class="movie__rating">${vote_average.toFixed(1)}</span>
@@ -57,7 +57,7 @@ export async function createMarkupGallery(results) {
       .join('');
     refs.homePageGalleryList.innerHTML = await markup;
   } catch (error) {
-    console.log(error.massege);
+    console.log(error);
   }
 }
 

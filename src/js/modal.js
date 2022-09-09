@@ -1,7 +1,6 @@
 import { createMarkupModalForFilms } from './modal_create-markup';
 // import { onBtnWatchedClick, onBtnQueueClick } from './add_to_watched';
 import { getFilmById } from './axiosRequests';
-import { isModalOpen } from './add_to_watched';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const galleryList = document.querySelector('.gallery__list');
@@ -72,7 +71,7 @@ export function onItemClick(evt) {
       function addLocalStorage() {
         const idForWatched = addToWatchedBtn.dataset.lsid;
 
-        console.log(arrayWatched);
+        // console.log(arrayWatched);
         if (arrayWatched.includes(idForWatched)) {
           // для удаления id из массива!
           // const positionRemove = arrayWatched.findIndex(
