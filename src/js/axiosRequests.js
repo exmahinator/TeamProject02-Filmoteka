@@ -22,7 +22,7 @@ export async function getTrendingMedia(pageNamber) {
 
 export async function getMovieSearch(query, pageNamber) {
   spinnerOn();
-  const { data } = await axios.get('search/movie', {
+  const  data  = await axios.get('search/movie', {
     params: {
       page: pageNamber,
       include_adult: false,
@@ -30,7 +30,8 @@ export async function getMovieSearch(query, pageNamber) {
     },
   });
   spinnerOff();
-  return data;
+  console.log(data)
+  return data.data;
 }
 
 export async function getGenre() {
