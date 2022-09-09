@@ -1,7 +1,5 @@
 import './js/loader';
-// import './js/search';
 import './js/modal';
-import './js/add_to_watched';
 import './js/heartOfTheProject';
 
 import './js/axiosRequests';
