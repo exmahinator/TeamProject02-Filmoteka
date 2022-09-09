@@ -8,6 +8,13 @@
 
 .tui-pagination .tui-page-btn {
   border: none !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  border-radius: 5px !important;
 }
 
 .tui-pagination .tui-page-btn:hover {
@@ -54,6 +61,7 @@
   height: 40px !important;
   padding: 0 !important;
   border: none !important;
+  border-radius: 5px !important;
 }
 
 .tui-page-inputs .tui-page-current {
