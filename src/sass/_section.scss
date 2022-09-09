@@ -149,6 +149,9 @@
     border-radius: 5px;
     overflow: hidden;
     object-fit: cover;
+
+    margin-left: auto;
+        margin-right: auto;
     @media screen and (max-width:767px) {
         // height:398px;
         margin-bottom: 8px;
@@ -166,6 +169,16 @@
     &:hover{
         cursor: pointer;
     }
+}
+
+.not_text {
+    text-align: center;
+    font-size: 20px;
+}
+
+.backHome {
+    color: #FF6B08;
+    text-transform: uppercase;
 }
 .movie__name{
     font-family: 'Roboto';
