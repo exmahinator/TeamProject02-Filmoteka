@@ -30,7 +30,7 @@ export async function getMovieSearch(query, pageNamber) {
     },
   });
   spinnerOff();
-  console.log(data)
+  // console.log(data)
   return data.data;
 }
 

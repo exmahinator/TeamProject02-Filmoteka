@@ -38,7 +38,7 @@ export function createMarkupById(results) {
         <p class="movie__description"> ${genres.map(({ name }) => {
           return name;
         })} | 
-          ${dataRelize.slice(
+          ${dataRelize?.slice(
             0,
             4
           )}<span class="movie__rating">${vote_average.toFixed(1)}</span>

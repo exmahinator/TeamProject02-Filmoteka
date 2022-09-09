@@ -71,7 +71,7 @@ export function onItemClick(evt) {
       function addLocalStorage() {
         const idForWatched = addToWatchedBtn.dataset.lsid;
 
-        console.log(arrayWatched);
+        // console.log(arrayWatched);
         if (arrayWatched.includes(idForWatched)) {
           // для удаления id из массива!
           // const positionRemove = arrayWatched.findIndex(

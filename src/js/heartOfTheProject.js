@@ -76,8 +76,8 @@ if (document.title !== 'Filmoteka_Library') {
         page
       );
 
-      console.log(results);
-      console.log(total_results);
+      // console.log(results);
+      // console.log(total_results);
 
       if (total_results === 0 || results.length === 0) {
         Notify.failure(
@@ -98,7 +98,7 @@ if (document.title !== 'Filmoteka_Library') {
       pagesRef.classList.add('visually-hidden');
       renderRef.innerHTML = '';
     } finally {
-      console.log('end');
+      // console.log('end');
     }
   };
 
